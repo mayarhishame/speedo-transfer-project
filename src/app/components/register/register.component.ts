@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MatDialog } from '@angular/material/dialog';
+
 import { LoginComponent } from '../login/login.component';
+
 import { AuthFooterComponent } from '../auth-footer/auth-footer.component';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -27,6 +30,7 @@ import { AuthenticationService } from '../../../core/services/authentication.ser
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   years: number[] = [];
+
   constructor(
     public dialog: MatDialog,
     private fb: FormBuilder,
@@ -40,14 +44,16 @@ export class RegisterComponent implements OnInit {
       fName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       countryId: ['', Validators.required],
-      day: ['', [Validators.required, Validators.min(2), Validators.max(2)]],
+      day: ['', [Validators.required, Validators.pattern(/^\d{1,2}$/)]],
       month: ['', Validators.required],
-      year: ['', [Validators.required, Validators.min(2), Validators.max(4)]],
+      year: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
       password: [
         '',
-        Validators.required,
-        Validators.minLength(6),
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\W).*$/),
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).+$/),
+        ],
       ],
     });
   }
@@ -60,7 +66,6 @@ export class RegisterComponent implements OnInit {
 
     const formData = this.registerForm.value;
 
-    // Map month to numeric value (01 for January, etc.)
     const monthMap: { [key: string]: string } = {
       Jan: '01',
       Feb: '02',
@@ -76,13 +81,12 @@ export class RegisterComponent implements OnInit {
       Dec: '12',
     };
 
-    const month = monthMap[formData.month] || '01'; // Default to '01' if month is not found
-    const day = formData.day.padStart(2, '0'); // Ensure day is two digits
+    const month = monthMap[formData.month] || '01';
+    const day = formData.day.padStart(2, '0');
     const year = formData.year;
 
     const dateOfBirth = `${year}-${month}-${day}`;
 
-    // Log the data for debugging
     console.log('Sending data:', {
       name: formData.fName,
       country: formData.countryId,
@@ -102,14 +106,14 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         (res) => {
           console.log('Response:', res);
-          alert('Form has been submitted..');
+          alert('Form has been submitted.');
         },
         (err) => {
           console.log('Error:', err);
-          // You may want to display an error message to the user
         }
       );
   }
+
   generateYears() {
     const currentYear = new Date().getFullYear();
     for (let year = currentYear; year >= 1900; year--) {

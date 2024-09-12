@@ -4,11 +4,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthenticationService } from '../../../core/services/authentication.service';
+import { AuthFooterComponent } from '../auth-footer/auth-footer.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, AuthFooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
   providers: [AuthenticationService],
