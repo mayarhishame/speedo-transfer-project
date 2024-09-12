@@ -1,0 +1,23 @@
+<div class="img">
+  <img src="assets/StepperHorizontal(2).svg" alt="" />
+</div>
+<div class="word">
+  <span>Amount</span>
+  <span>Confirmation</span>
+  <span>Payment</span>
+</div>
+<div class="content">
+  <h2>Your transfer was successful</h2>
+  <span>{{ transferData.amount }} EGP</span>
+  <div class="mm">
+    <div class="image">
+      <img src="assets/bank.svg" alt="" />
+    </div>
+    <div>
+      <p>To</p>
+      <p>{{ transferData.recipientName }}</p>
+      <p>Account {{ transferData.toAccountNumber }}</p>
+    </div>
+  </div>
+  <button (click)="backToHome()">Back to Home</button>
+</div>

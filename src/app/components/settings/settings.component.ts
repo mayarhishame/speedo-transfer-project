@@ -35,7 +35,7 @@ export class SettingsComponent {
       email: this.email,
     };
 
-    this.profileService.updateUserData(this.userId, updatedProfile).subscribe(
+    this.profileService.updateUserData(updatedProfile).subscribe(
       (response) => {
         console.log('Profile updated successfully:', response);
       },

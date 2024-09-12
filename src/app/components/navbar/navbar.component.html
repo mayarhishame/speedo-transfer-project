@@ -39,8 +39,12 @@
           <a class="nav-link" href="#">Help</a>
         </li>
       </ul>
-      <button class="btn btn-outline-secondary btn-login">Login</button>
-      <button class="btn btn-register">Register Now</button>
+      <button (click)="openLogin()" class="btn btn-outline-secondary btn-login">
+        Login
+      </button>
+      <button (click)="openRegister()" class="btn btn-register">
+        Register Now
+      </button>
     </div>
   </div>
 </nav>

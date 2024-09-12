@@ -7,7 +7,9 @@ import {
   RouterLinkActive,
   RouterOutlet,
 } from '@angular/router';
-
+import { RegisterComponent } from '../register/register.component';
+import { LoginComponent } from '../login/login.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -23,9 +25,21 @@ import {
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, public dialog: MatDialog) {}
 
   isActive(route: string): boolean {
     return this.router.url === route;
+  }
+
+  openRegister(): void {
+    this.dialog.open(RegisterComponent, {
+      width: '1440px',
+    });
+  }
+
+  openLogin(): void {
+    this.dialog.open(LoginComponent, {
+      width: '1440px',
+    });
   }
 }

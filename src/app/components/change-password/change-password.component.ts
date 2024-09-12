@@ -29,7 +29,7 @@ export class ChangePasswordComponent {
 
   updatePassword() {
     this.profileService
-      .updatePassword(this.userId, this.currentPassword, this.newPassword)
+      .updatePassword(this.currentPassword, this.newPassword)
       .subscribe(
         (response) => {
           console.log('Password updated successfully', response);

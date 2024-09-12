@@ -32,7 +32,7 @@ export class MyProfileComponent {
 
   ngOnInit(): void {
     const userId = 2;
-    this.ProfileService.getAcountData(userId).subscribe(
+    this.ProfileService.getAcountData().subscribe(
       (data) => {
         this.userData.accountNumber = data.accountNumber;
         this.userData.balance = data.balance;
@@ -41,7 +41,7 @@ export class MyProfileComponent {
         console.error('Error fetching user data', error);
       }
     );
-    this.ProfileService.getUserData(userId).subscribe(
+    this.ProfileService.getUserData().subscribe(
       (data) => {
         this.userData.email = data.email;
         this.userData.name = data.name;

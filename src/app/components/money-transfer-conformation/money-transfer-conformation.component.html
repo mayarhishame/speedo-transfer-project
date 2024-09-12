@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="img">
+      <img src="assets/StepperHorizontal(1).svg" alt="" />
+    </div>
+    <div class="word">
+      <span>Amount</span>
+      <span>Confirmation</span>
+      <span>Payment</span>
+    </div>
+    <div class="content">
+      <div>
+        <span class="m">Total amount</span>
+        <span>{{ transferData.amount }} EGP</span>
+        <hr />
+        <div class="mm">
+          <div class="image">
+            <img src="assets/bank.svg" alt="" />
+          </div>
+          <div>
+            <p>From</p>
+            <!-- Display user's name and account fetched from the API -->
+            <p>{{ userData?.name }}</p>
+            <p>Account {{ userData?.accountNumber }}</p>
+          </div>
+        </div>
+        <div class="mm">
+          <div class="image">
+            <img src="assets/bank.svg" alt="" />
+          </div>
+          <div>
+            <p>To</p>
+            <p>{{ transferData.recipientName }}</p>
+            <p>Account {{ transferData.toAccountNumber }}</p>
+          </div>
+        </div>
+        <button (click)="onConfirm()">Confirm</button>
+        <button (click)="onBack()">Back</button>
+      </div>
+    </div>
+  </body>
+</html>

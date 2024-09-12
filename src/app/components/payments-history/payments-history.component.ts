@@ -27,7 +27,7 @@ export class PaymentsHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     const userId = 2;
-    this.profileService.getHistoryData(userId).subscribe(
+    this.profileService.getHistoryData().subscribe(
       (data) => {
         console.log('Data received:', data); // Log data to verify
         this.transactions = data;
