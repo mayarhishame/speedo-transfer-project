@@ -1,0 +1,42 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+}
+.navbar {
+  padding: 10px 0;
+}
+.navbar-nav {
+  padding-left: 200px;
+}
+.navbar-brand {
+  font-weight: 600;
+  font-size: 32px;
+  color: #24221e;
+  padding-left: 75px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 16px;
+  color: #3c3a37;
+}
+
+.nav-link:hover {
+  color: #871e35;
+}
+nav li.active a {
+  color: #871e35;
+}
+
+.btn-login {
+  border: 1px solid #24221e;
+  color: #24221e;
+  margin-right: 10px;
+  margin-left: 30px;
+}
+
+.btn-register {
+  background: #871e35;
+  border: 1px solid #871e35;
+  color: #ffffff;
+}

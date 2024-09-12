@@ -1,0 +1,98 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.get-started {
+  margin: auto;
+  max-width: 100%;
+  padding: 0 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: rgba(251, 251, 251, 1);
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.head {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.head p {
+  color: rgba(135, 30, 53, 1);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 60px;
+  color: #24221e;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+img {
+  margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.steps div {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+h5 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 36px;
+}
+h5 span {
+  color: rgba(135, 30, 53, 1);
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 30px;
+    line-height: 45px;
+  }
+  .steps div {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .steps {
+    display: block;
+    text-align: center;
+  }
+  .steps div {
+    margin-bottom: 30px;
+  }
+}

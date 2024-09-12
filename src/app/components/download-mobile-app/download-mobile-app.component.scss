@@ -1,0 +1,134 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  background-color: rgba(243, 233, 235, 1);
+  padding: 4rem 6rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.download-image {
+  width: 100%;
+  max-width: 47%;
+}
+
+.download-image img {
+  width: 100%;
+  height: auto;
+  max-height: 568px;
+  object-fit: cover;
+}
+
+.download-info {
+  margin-left: 1.5rem;
+  width: 100%;
+  max-width: 47%;
+}
+
+.mobile {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgba(135, 30, 53, 1);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+span {
+  padding-left: 1px;
+  padding-bottom: 1px;
+  height: 27px;
+  display: inline-block;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.download-info > img {
+  margin-right: 12px;
+}
+.download-info > div {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 1024px) {
+  section {
+    padding: 3rem 4rem;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .download-image,
+  .download-info {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .mobile {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 2rem 2rem;
+  }
+
+  .mobile {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  .mobile {
+    font-size: 0.875rem;
+  }
+
+  .download-image img {
+    height: auto;
+  }
+  .buttons {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,85 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+footer {
+  background: rgba(82, 18, 32, 1);
+}
+
+footer .footer-header {
+  font-size: 32px;
+  padding-top: 50px;
+  font-weight: 600;
+  line-height: 48px;
+}
+footer p {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 28.8px;
+}
+footer .Contact-info {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 24px;
+  padding-bottom: 15px;
+}
+footer .email,
+.email-link,
+.phone,
+.phone-num {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  line-height: 24px;
+}
+footer .email,
+.phone {
+  font-weight: 500;
+}
+footer .email-link,
+.phone-num {
+  font-weight: 400;
+}
+footer .phone {
+  padding-bottom: 50px;
+}
+footer .copy-right {
+  width: 1250px;
+  margin: 0 auto;
+  padding: 16px 0;
+  border-top: 1px solid rgba(205, 214, 224, 0.3);
+  text-align: center;
+}
+
+footer .copy-right p {
+  margin: 0;
+}
+@media only screen and (max-width: 768px) {
+  footer .copy-right {
+    width: 200px;
+  }
+
+  footer .copy-right p {
+    font-size: 12px;
+  }
+  footer .footer-header {
+    font-size: 20px;
+  }
+  footer p {
+    font-size: 12px;
+  }
+  footer .Contact-info {
+    font-size: 16px;
+  }
+  footer .email,
+  .email-link,
+  .phone,
+  .phone-num {
+    font-size: 12px;
+  }
+  footer .phone {
+    padding-bottom: 40%;
+  }
+}
