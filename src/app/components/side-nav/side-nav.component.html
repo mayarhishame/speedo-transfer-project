@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <aside class="sidebar">
+   <ul>
+     <li [ngClass]="{ active: isActive('/profile') }">
+       <a [routerLink]="'/profile'">My profile</a>
+     </li>
+     <li [ngClass]="{ active: isActive('/paymentHistory') }">
+       <a [routerLink]="'/paymentHistory'">Payments history</a>
+     </li>
+     <li [ngClass]="{ active: isActive('/settings') }">
+       <a [routerLink]="'/settings'">Settings</a>
+     </li>
+     <li [ngClass]="{ active: isActive('/changePassword') }">
+       <a [routerLink]="'/changePassword'">Change password</a>
+     </li>
+   </ul>
+ </aside>
+
+  </body>
+</html>

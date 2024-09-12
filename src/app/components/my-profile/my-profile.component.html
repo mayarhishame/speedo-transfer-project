@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <app-navbar></app-navbar>
+    <div class="contain">
+      <app-side-nav></app-side-nav>
+      <div class="content">
+        <h3>My Profile</h3>
+        <p>
+          <span>{{ userData.balance }} EGP</span> Balance
+        </p>
+        <div>
+          <span>First Name : </span>
+          <span>{{ userData.name }}</span>
+        </div>
+        <div>
+          <span>Email : </span>
+          <span>{{ userData.email }}</span>
+        </div>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </body>
+</html>

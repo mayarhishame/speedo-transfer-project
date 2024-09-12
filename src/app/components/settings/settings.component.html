@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+<div class="contain">
+  <app-side-nav></app-side-nav>
+  <div class="settings-container">
+    <h2>Settings</h2>
+    <ul class="tabs">
+      <li class="tab active">Profile</li>
+      <li class="tab">Change password</li>
+    </ul>
+    <div class="form-group">
+      <label for="fullName">Full Name</label>
+      <input
+        id="fullName"
+        type="text"
+        [(ngModel)]="name"
+        placeholder="Full Name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="country">Country</label>
+      <input
+        id="country"
+        type="text"
+        [(ngModel)]="country"
+        placeholder="Country"
+      />
+    </div>
+    <div class="form-group">
+      <div>
+        <div class="phone">
+          <label for="phone">Phone</label>
+          <input id="phone" type="text" placeholder="Phone" />
+        </div>
+        <div class="email">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            placeholder="Email"
+          />
+        </div>
+      </div>
+    </div>
+
+    <button (click)="updateProfile()" class="btn btn-primary">
+      Update Profile
+    </button>
+  </div>
+</div>
+<app-footer></app-footer>

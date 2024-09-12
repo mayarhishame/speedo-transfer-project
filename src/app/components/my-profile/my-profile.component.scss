@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+.contain {
+  display: flex;
+  height: 718px;
+  margin: 96px;
+  gap: 32px;
+  border: 1px solid rgba(227, 226, 226, 1);
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 0px 0px;
+  gap: 32px;
+  width: 462px;
+  height: 420px;
+}
+h3 {
+  width: 117px;
+  height: 36px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  color: #24221e;
+}
+p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #5f1525;
+}
+
+p span {
+  font-size: 64px;
+  color: #24221e;
+}
