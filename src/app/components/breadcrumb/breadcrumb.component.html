@@ -1,0 +1,8 @@
+<!-- breadcrumb.component.html -->
+<div class="breadcrumb">
+  <h1>{{ headerText }}</h1>
+  <ng-container *ngFor="let item of breadcrumbItems; let i = index">
+    <a *ngIf="i > 0" [href]="currentUrl" [style.color]="item.color">/</a>
+    <a [href]="currentUrl" [style.color]="item.color">{{ item.label }}</a>
+  </ng-container>
+</div>

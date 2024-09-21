@@ -40,3 +40,16 @@ nav li.active a {
   border: 1px solid #871e35;
   color: #ffffff;
 }
+
+
+.dropdown-toggle::after {
+  display: none; /* Hide default caret */
+}
+
+.btn-outline-secondary {
+  border-radius: 20px; /* Make the button rounded */
+}
+
+.dropdown-menu {
+  min-width: 200px; /* Set a minimum width */
+}

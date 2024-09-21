@@ -15,7 +15,7 @@
         <input
           type="text"
           id="fullName"
-          formControlName="fName"
+          formControlName="name"
           placeholder="Full name"
           required
         />
@@ -34,7 +34,7 @@
 
       <div class="form-group">
         <label for="country">Country</label>
-        <select id="country" formControlName="countryId" required>
+        <select id="country" formControlName="country" required>
           <option value="">Select your country</option>
           <option value="UK">UK</option>
           <option value="US">US</option>
@@ -43,7 +43,7 @@
       </div>
 
       <div class="form-group">
-        <label>Date of birth</label>
+        <span>Date of birth</span>
         <div class="date-of-birth">
           <div class="input-group">
             <label for="day">Day</label>

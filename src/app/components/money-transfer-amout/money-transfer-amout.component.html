@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<app-breadcrumb></app-breadcrumb>
+<div class="img">
+  <img src="assets\Stepper.svg" alt="" />
+</div>
+<div class="word">
+  <span>Amount</span>
+  <span>Confirmation</span>
+  <span>Payment</span>
+</div>
+<section>
+  <div class="content">
+    <h2>How much are you sending?</h2>
+    <form>
+      <label for="amount">Amount</label>
+      <input [(ngModel)]="amount" name="amount" required />
+      <p class="info-p">Recipient Information</p>
+      <label for="recipientName">Recipient Name</label>
+      <input [(ngModel)]="recipientName" name="recipientName" required />
+
+      <label for="toAccountNumber">Recipient Account</label>
+      <input [(ngModel)]="recipientAccount" name="recipientAccount" required />
+      <button (click)="continue()">Continue</button>
+    </form>
+  </div>
+</section>
+<app-download-mobile-app></app-download-mobile-app>
+<app-footer></app-footer>

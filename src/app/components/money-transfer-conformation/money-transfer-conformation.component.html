@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="img">
+  <img src="assets\Stepper Horizontal (1).svg" alt="" />
+</div>
+<div class="word">
+  <span>Amount</span>
+  <span>Confirmation</span>
+  <span>Payment</span>
+</div>
+
+<div class="content">
+  <div class="total-amout">
+    <p>Total amount:</p>
+    <p>{{ amount }} EGP</p>
+  </div>
+  <hr />
+  <div class="from">
+    <div class="home-image">
+      <img src="assets\Group 13.svg" alt="" srcset="" />
+    </div>
+    <div class="words">
+      <p>from</p>
+      <!-- <p>{{ recipientName }}</p>
+      <p>{{ recipientAccount }}</p> -->
+      <p>mayar</p>
+      <p>443291020</p>
+    </div>
+  </div>
+  <div class="switch">
+    <img src="assets\switch.svg" />
+  </div>
+
+  <div class="to">
+    <div class="home-image">
+      <img src="assets\Group 13.svg" alt="" srcset="" />
+    </div>
+    <div class="words">
+      <p>To</p>
+      <p>{{ recipientName }}</p>
+      <p>{{ recipientAccount }}</p>
+    </div>
+  </div>
+
+  <button class="btn-confirm" (click)="confirm()">Confirm</button>
+  <button class="btn-back" (click)="back()">Back</button>
+</div>
+
+<app-download-mobile-app></app-download-mobile-app>
+<app-footer></app-footer>

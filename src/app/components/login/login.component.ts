@@ -42,19 +42,9 @@ export class LoginComponent {
       next: (response: any) => {
         localStorage.setItem('authToken', response.token);
         localStorage.setItem('userId', response.id.toString());
-        console.log('Login successful!');
-        console.log('Token:', response.token);
-        console.log('User ID:', response.id);
+        this.close();
       },
-      error: (error) => {
-        console.error('Login failed', error);
-        console.error(
-          'Error details:',
-          error.message,
-          error.status,
-          error.statusText
-        );
-      },
+      error: (error) => console.error('Login failed', error),
     });
   }
 }

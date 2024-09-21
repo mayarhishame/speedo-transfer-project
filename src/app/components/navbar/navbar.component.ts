@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Router,
@@ -24,8 +24,12 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  isLogged: boolean = false;
   constructor(private router: Router, public dialog: MatDialog) {}
+  ngOnInit(): void {
+    this.isLogged = !!localStorage.getItem('authToken');
+  }
 
   isActive(route: string): boolean {
     return this.router.url === route;

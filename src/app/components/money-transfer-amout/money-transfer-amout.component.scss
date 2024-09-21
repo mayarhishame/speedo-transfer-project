@@ -1,0 +1,98 @@
+* {
+  font-family: "Inter", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.info-p {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.img {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+}
+
+.word span {
+  padding: 25px;
+}
+
+.content {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #b0afae;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+button {
+  width: 554px;
+  height: 56px;
+  background: #871e35;
+  border: 1px solid #871e35;
+  border-radius: 6.5px;
+  margin-top: 20px;
+  color: white;
+}
+
+h2 {
+  width: 100%; /* Ensure it doesn't overflow */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 150%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.info {
+  width: 201px;
+  height: 30px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #3c3a37;
+}
+
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+label {
+  display: block;
+  text-align: left;
+}

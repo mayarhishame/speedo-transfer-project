@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { ProfileService } from '../../services/profile.service';
+
 import { SideNavComponent } from '../side-nav/side-nav.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ProfileService } from '../../../core/services/profile.service';
 
 @Component({
   selector: 'app-settings',

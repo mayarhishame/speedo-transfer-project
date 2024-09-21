@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SideNavComponent } from '../side-nav/side-nav.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileService } from '../../services/profile.service';
+
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ProfileService } from '../../../core/services/profile.service';
 
 @Component({
   selector: 'app-payments-history',
@@ -29,7 +30,6 @@ export class PaymentsHistoryComponent implements OnInit {
     const userId = 2;
     this.profileService.getHistoryData().subscribe(
       (data) => {
-        console.log('Data received:', data); // Log data to verify
         this.transactions = data;
       },
       (error) => {

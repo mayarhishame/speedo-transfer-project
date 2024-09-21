@@ -30,7 +30,20 @@ import { AuthenticationService } from '../../../core/services/authentication.ser
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
   years: number[] = [];
-
+  monthMap: { [key: string]: string } = {
+    Jan: '01',
+    Feb: '02',
+    Mar: '03',
+    Apr: '04',
+    May: '05',
+    Jun: '06',
+    Jul: '07',
+    Aug: '08',
+    Sep: '09',
+    Oct: '10',
+    Nov: '11',
+    Dec: '12',
+  };
   constructor(
     public dialog: MatDialog,
     private fb: FormBuilder,
@@ -41,11 +54,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      fName: ['', Validators.required],
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      countryId: ['', Validators.required],
+      country: ['', Validators.required],
       day: ['', [Validators.required, Validators.pattern(/^\d{1,2}$/)]],
       month: ['', Validators.required],
+      dateOfBirth: [''],
       year: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
       password: [
         '',
@@ -59,59 +73,22 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
-    if (this.registerForm.invalid) {
-      // Handle form validation errors
-      return;
-    }
+    if (this.registerForm.invalid) return;
 
-    const formData = this.registerForm.value;
+    const month = this.monthMap[this.registerForm.get('month')?.value] || '01';
+    const day = this.registerForm.get('day')?.value.padStart(2, '0');
 
-    const monthMap: { [key: string]: string } = {
-      Jan: '01',
-      Feb: '02',
-      Mar: '03',
-      Apr: '04',
-      May: '05',
-      Jun: '06',
-      Jul: '07',
-      Aug: '08',
-      Sep: '09',
-      Oct: '10',
-      Nov: '11',
-      Dec: '12',
-    };
+    this.registerForm
+      .get('dateOfBirth')
+      ?.setValue(`${this.registerForm.get('year')?.value}-${month}-${day}`);
 
-    const month = monthMap[formData.month] || '01';
-    const day = formData.day.padStart(2, '0');
-    const year = formData.year;
-
-    const dateOfBirth = `${year}-${month}-${day}`;
-
-    console.log('Sending data:', {
-      name: formData.fName,
-      country: formData.countryId,
-      email: formData.email,
-      password: formData.password,
-      dateOfBirth: dateOfBirth,
+    this.authService.register(this.registerForm.value).subscribe({
+      next: (res) => {
+        this.close();
+        alert('Form has been submitted.');
+      },
+      error: (err) => console.log('Error:', err),
     });
-
-    this.authService
-      .register({
-        name: formData.fName,
-        country: formData.countryId,
-        email: formData.email,
-        password: formData.password,
-        dateOfBirth: dateOfBirth,
-      })
-      .subscribe(
-        (res) => {
-          console.log('Response:', res);
-          alert('Form has been submitted.');
-        },
-        (err) => {
-          console.log('Error:', err);
-        }
-      );
   }
 
   generateYears() {

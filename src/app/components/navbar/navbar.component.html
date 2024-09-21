@@ -35,16 +35,46 @@
         >
           <a class="nav-link" routerLink="/profile">My Account</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Help</a>
+        <li
+          class="nav-item"
+          aria-current="page"
+          [ngClass]="{ active: isActive('/help') }"
+        >
+          <a class="nav-link" routerLink="/help">Help</a>
         </li>
       </ul>
-      <button (click)="openLogin()" class="btn btn-outline-secondary btn-login">
-        Login
-      </button>
-      <button (click)="openRegister()" class="btn btn-register">
-        Register Now
-      </button>
+      <ng-container *ngIf="!this.isLogged">
+        <button
+          (click)="openLogin()"
+          class="btn btn-outline-secondary btn-login"
+        >
+          Login
+        </button>
+        <button (click)="openRegister()" class="btn btn-register">
+          Register Now
+        </button>
+      </ng-container>
+
+      <ng-container *ngIf="this.isLogged">
+        <div class="dropdown ms-5">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            id="userDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="me-2">M</span> mayar
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">Payment History</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Change Password</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </ng-container>
     </div>
   </div>
 </nav>

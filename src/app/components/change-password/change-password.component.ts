@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SideNavComponent } from '../side-nav/side-nav.component';
 import { FormsModule } from '@angular/forms';
-import { ProfileService } from '../../services/profile.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
+import { ProfileService } from '../../../core/services/profile.service';
 
 @Component({
   selector: 'app-change-password',
@@ -23,7 +24,7 @@ import { FooterComponent } from '../footer/footer.component';
 export class ChangePasswordComponent {
   currentPassword: string = '';
   newPassword: string = '';
-  userId: number = 2; // Use the correct user ID dynamically
+  userId: number = 2;
 
   constructor(private profileService: ProfileService) {}
 

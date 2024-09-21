@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="img">
+  <img src="assets\Stepper Horizontal (3).svg" alt="" />
+</div>
+<div class="word">
+  <span>Amount</span>
+  <span>Confirmation</span>
+  <span>Payment</span>
+</div>
+
+<div class="content">
+  <div class="confirm">
+    <img src="assets\Group 16.svg" alt="" srcset="" />
+    <h2>Your transfer was successful</h2>
+    <p>{{ amount }} EGP</p>
+  </div>
+
+  <div class="from">
+    <div class="home-image">
+      <img src="assets\Group 13.svg" alt="" srcset="" />
+    </div>
+    <div class="words">
+      <p>from</p>
+      <p>{{ recipientName }}</p>
+      <p>{{ recipientAccount }}</p>
+    </div>
+  </div>
+  <div class="switch">
+    <img src="assets\switch.svg" />
+  </div>
+
+  <div class="to">
+    <div class="home-image">
+      <img src="assets\Group 13.svg" alt="" srcset="" />
+    </div>
+    <div class="words">
+      <p>To</p>
+      <p>{{ recipientName }}</p>
+      <p>{{ recipientAccount }}</p>
+    </div>
+  </div>
+  <div class="total-amout">
+    <p>Transfer amount :</p>
+    <p>{{ amount }} EGP</p>
+  </div>
+  <button class="btn-confirm" (click)="completeTransfer()">Back to Home</button>
+  <button class="btn-back" (click)="back()">Add To Favourite</button>
+</div>
+<app-download-mobile-app></app-download-mobile-app>
+<app-footer></app-footer>
